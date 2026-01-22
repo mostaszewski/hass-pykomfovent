@@ -315,6 +315,10 @@ cards:
 - Home Assistant 2024.1.0+
 - Komfovent C6 ventilation unit with web interface
 
+## Library
+
+This integration uses [pykomfovent](https://github.com/mostaszewski/pykomfovent) for device communication.
+
 ## License
 
 MIT
