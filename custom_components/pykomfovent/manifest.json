@@ -1,0 +1,12 @@
+{
+  "domain": "pykomfovent",
+  "name": "Komfovent C6",
+  "codeowners": ["@mostaszewski"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/mostaszewski/hass-pykomfovent",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/mostaszewski/hass-pykomfovent/issues",
+  "requirements": ["pykomfovent>=1.0.2"],
+  "version": "1.0.0"
+}

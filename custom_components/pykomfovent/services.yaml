@@ -1,0 +1,105 @@
+set_mode:
+  name: Set mode
+  description: Set the ventilation mode
+  fields:
+    mode:
+      name: Mode
+      description: The ventilation mode to set
+      required: true
+      example: "normal"
+      selector:
+        select:
+          options:
+            - "away"
+            - "normal"
+            - "intensive"
+            - "boost"
+    device_id:
+      name: Device
+      description: Target device (optional, applies to all if not specified)
+      required: false
+      selector:
+        device:
+          integration: pykomfovent
+
+set_temperature:
+  name: Set temperature
+  description: Set the supply temperature setpoint
+  fields:
+    temperature:
+      name: Temperature
+      description: Target supply temperature in Celsius
+      required: true
+      example: 21
+      selector:
+        number:
+          min: 10
+          max: 30
+          step: 0.5
+          unit_of_measurement: "°C"
+    device_id:
+      name: Device
+      description: Target device (optional, applies to all if not specified)
+      required: false
+      selector:
+        device:
+          integration: pykomfovent
+
+get_schedule:
+  name: Get schedule
+  description: Get the current schedule configuration
+  fields:
+    device_id:
+      name: Device
+      description: Target device (optional, uses first device if not specified)
+      required: false
+      selector:
+        device:
+          integration: pykomfovent
+
+set_schedule:
+  name: Set schedule
+  description: Set a schedule row
+  fields:
+    program:
+      name: Program
+      description: Program number (0-3)
+      required: true
+      example: 0
+      selector:
+        number:
+          min: 0
+          max: 3
+    row:
+      name: Row
+      description: Row number within program (0-3)
+      required: true
+      example: 0
+      selector:
+        number:
+          min: 0
+          max: 3
+    weekdays:
+      name: Weekdays
+      description: Bitmask for active days (1=Mon, 2=Tue, 4=Wed, 8=Thu, 16=Fri, 32=Sat, 64=Sun, 127=all)
+      required: true
+      example: 127
+      selector:
+        number:
+          min: 0
+          max: 127
+    entries:
+      name: Entries
+      description: List of schedule entries (max 5)
+      required: true
+      example:
+        - mode: "normal"
+          start: "08:00"
+          stop: "22:00"
+    device_id:
+      name: Device
+      description: Target device (optional, applies to all if not specified)
+      required: false
+      selector:
+        device:
+          integration: pykomfovent

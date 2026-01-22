@@ -1,0 +1,121 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to Komfovent",
+        "description": "Leave host empty to automatically discover your device on the local network.",
+        "data": {
+          "host": "Host (optional)",
+          "username": "Username",
+          "password": "Password",
+          "scan_interval": "Scan interval (seconds)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-authenticate Komfovent",
+        "description": "Please enter new credentials for your Komfovent device.",
+        "data": {
+          "username": "Username",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect",
+      "invalid_auth": "Invalid authentication",
+      "discovery_failed": "Could not find a Komfovent device on your network. Please enter the IP address manually."
+    },
+    "abort": {
+      "already_configured": "Device is already configured",
+      "reauth_successful": "Re-authentication successful"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Komfovent Options",
+        "data": {
+          "scan_interval": "Scan interval (seconds)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "mode": { "name": "Mode" },
+      "supply_temp": { "name": "Supply temperature" },
+      "extract_temp": { "name": "Extract temperature" },
+      "outdoor_temp": { "name": "Outdoor temperature" },
+      "supply_fan": { "name": "Supply fan" },
+      "extract_fan": { "name": "Extract fan" },
+      "supply_fan_intensity": { "name": "Supply fan intensity" },
+      "extract_fan_intensity": { "name": "Extract fan intensity" },
+      "filter_contamination": { "name": "Filter contamination" },
+      "heat_exchanger_percent": { "name": "Heat exchanger" },
+      "heat_exchanger_efficiency": { "name": "Heat exchanger efficiency" },
+      "electric_heater_percent": { "name": "Electric heater" },
+      "heat_recovery_power": { "name": "Heat recovery power" },
+      "power_consumption": { "name": "Power consumption" },
+      "heating_power": { "name": "Heating power" },
+      "spi_actual": { "name": "SPI actual" },
+      "spi_daily": { "name": "SPI daily" },
+      "energy_consumed_daily": { "name": "Energy consumed daily" },
+      "energy_consumed_monthly": { "name": "Energy consumed monthly" },
+      "energy_consumed_total": { "name": "Energy consumed total" },
+      "energy_heating_daily": { "name": "Heating energy daily" },
+      "energy_heating_monthly": { "name": "Heating energy monthly" },
+      "energy_heating_total": { "name": "Heating energy total" },
+      "energy_recovered_daily": { "name": "Energy recovered daily" },
+      "energy_recovered_monthly": { "name": "Energy recovered monthly" },
+      "energy_recovered_total": { "name": "Energy recovered total" },
+      "air_quality": { "name": "Air quality" },
+      "humidity": { "name": "Humidity" }
+    },
+    "binary_sensor": {
+      "filter_dirty": { "name": "Filter needs cleaning" },
+      "heating_active": { "name": "Heating active" }
+    },
+    "select": {
+      "mode_select": {
+        "name": "Mode",
+        "state": {
+          "away": "Away",
+          "normal": "Normal",
+          "intensive": "Intensive",
+          "boost": "Boost"
+        }
+      }
+    },
+    "number": {
+      "supply_temp_setpoint": { "name": "Supply temperature setpoint" }
+    }
+  },
+  "device_automation": {
+    "trigger_type": {
+      "filter_warning": "Filter needs cleaning",
+      "mode_changed": "Mode changed"
+    }
+  },
+  "services": {
+    "set_mode": {
+      "name": "Set mode",
+      "description": "Set the ventilation mode",
+      "fields": {
+        "mode": {
+          "name": "Mode",
+          "description": "The ventilation mode"
+        }
+      }
+    },
+    "set_temperature": {
+      "name": "Set temperature",
+      "description": "Set the supply temperature setpoint",
+      "fields": {
+        "temperature": {
+          "name": "Temperature",
+          "description": "Target temperature in Celsius"
+        }
+      }
+    }
+  }
+}

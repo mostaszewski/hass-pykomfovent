@@ -1,0 +1,46 @@
+[project]
+name = "hass-pykomfovent"
+version = "1.0.0"
+description = "Home Assistant integration for Komfovent ventilation units"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.13.2"
+dependencies = []
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.pyright]
+pythonVersion = "3.13"
+typeCheckingMode = "basic"
+venvPath = "."
+venv = ".venv"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["custom_components/pykomfovent"]
+omit = ["*/www/*"]
+
+[tool.coverage.report]
+fail_under = 95
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:",
+]
+
+[dependency-groups]
+dev = [
+    "pytest-homeassistant-custom-component>=0.13.300",
+    "aiohttp>=3.11.0",
+    "pykomfovent>=1.0.0",
+    "pyright>=1.1.400",
+    "ruff>=0.9.0",
+]

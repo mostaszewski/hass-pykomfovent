@@ -1,0 +1,165 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Połącz z Komfovent",
+        "description": "Pozostaw pole hosta puste, aby automatycznie wykryć urządzenie w sieci lokalnej.",
+        "data": {
+          "host": "Host (opcjonalnie)",
+          "username": "Nazwa użytkownika",
+          "password": "Hasło",
+          "scan_interval": "Interwał skanowania (sekundy)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Ponowne uwierzytelnienie Komfovent",
+        "description": "Wprowadź nowe dane logowania do urządzenia Komfovent.",
+        "data": {
+          "username": "Nazwa użytkownika",
+          "password": "Hasło"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Nie udało się połączyć",
+      "invalid_auth": "Nieprawidłowe dane logowania",
+      "discovery_failed": "Nie znaleziono urządzenia Komfovent w sieci. Wprowadź adres IP ręcznie."
+    },
+    "abort": {
+      "already_configured": "Urządzenie jest już skonfigurowane",
+      "reauth_successful": "Ponowne uwierzytelnienie zakończone pomyślnie"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opcje Komfovent",
+        "data": {
+          "scan_interval": "Interwał skanowania (sekundy)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "mode": { "name": "Tryb" },
+      "supply_temp": { "name": "Temperatura nawiewu" },
+      "extract_temp": { "name": "Temperatura wywiewu" },
+      "outdoor_temp": { "name": "Temperatura zewnętrzna" },
+      "supply_fan": { "name": "Wentylator nawiewny" },
+      "extract_fan": { "name": "Wentylator wywiewny" },
+      "supply_fan_intensity": { "name": "Intensywność wentylatora nawiewnego" },
+      "extract_fan_intensity": { "name": "Intensywność wentylatora wywiewnego" },
+      "filter_contamination": { "name": "Zanieczyszczenie filtra" },
+      "heat_exchanger_percent": { "name": "Wymiennik ciepła" },
+      "heat_exchanger_efficiency": { "name": "Wydajność wymiennika ciepła" },
+      "electric_heater_percent": { "name": "Nagrzewnica elektryczna" },
+      "heat_recovery_power": { "name": "Moc odzysku ciepła" },
+      "power_consumption": { "name": "Pobór mocy" },
+      "heating_power": { "name": "Moc grzania" },
+      "spi_actual": { "name": "SPI aktualny" },
+      "spi_daily": { "name": "SPI dzienny" },
+      "energy_consumed_daily": { "name": "Energia zużyta dziennie" },
+      "energy_consumed_monthly": { "name": "Energia zużyta miesięcznie" },
+      "energy_consumed_total": { "name": "Energia zużyta łącznie" },
+      "energy_heating_daily": { "name": "Energia grzania dziennie" },
+      "energy_heating_monthly": { "name": "Energia grzania miesięcznie" },
+      "energy_heating_total": { "name": "Energia grzania łącznie" },
+      "energy_recovered_daily": { "name": "Energia odzyskana dziennie" },
+      "energy_recovered_monthly": { "name": "Energia odzyskana miesięcznie" },
+      "energy_recovered_total": { "name": "Energia odzyskana łącznie" },
+      "air_quality": { "name": "Jakość powietrza" },
+      "humidity": { "name": "Wilgotność" }
+    },
+    "binary_sensor": {
+      "filter_dirty": { "name": "Filtr wymaga czyszczenia" },
+      "heating_active": { "name": "Grzanie aktywne" }
+    },
+    "select": {
+      "mode_select": {
+        "name": "Tryb",
+        "state": {
+          "away": "Nieobecność",
+          "normal": "Normalny",
+          "intensive": "Intensywny",
+          "boost": "Turbo"
+        }
+      }
+    },
+    "number": {
+      "supply_temp_setpoint": { "name": "Temperatura nawiewu zadana" },
+      "mode_away_supply_fan": { "name": "Tryb nieobecność - nawiew" },
+      "mode_normal_supply_fan": { "name": "Tryb normalny - nawiew" },
+      "mode_intensive_supply_fan": { "name": "Tryb intensywny - nawiew" },
+      "mode_boost_supply_fan": { "name": "Tryb turbo - nawiew" },
+      "mode_hood_supply_fan": { "name": "Tryb okap - nawiew" },
+      "mode_fireplace_supply_fan": { "name": "Tryb kominek - nawiew" },
+      "mode_override_supply_fan": { "name": "Tryb nadrzędny - nawiew" },
+      "mode_away_extract_fan": { "name": "Tryb nieobecność - wywiew" },
+      "mode_normal_extract_fan": { "name": "Tryb normalny - wywiew" },
+      "mode_intensive_extract_fan": { "name": "Tryb intensywny - wywiew" },
+      "mode_boost_extract_fan": { "name": "Tryb turbo - wywiew" },
+      "mode_hood_extract_fan": { "name": "Tryb okap - wywiew" },
+      "mode_fireplace_extract_fan": { "name": "Tryb kominek - wywiew" },
+      "mode_override_extract_fan": { "name": "Tryb nadrzędny - wywiew" },
+      "mode_away_temp": { "name": "Tryb nieobecność - temperatura" },
+      "mode_normal_temp": { "name": "Tryb normalny - temperatura" },
+      "mode_intensive_temp": { "name": "Tryb intensywny - temperatura" },
+      "mode_boost_temp": { "name": "Tryb turbo - temperatura" },
+      "mode_hood_temp": { "name": "Tryb okap - temperatura" },
+      "mode_fireplace_temp": { "name": "Tryb kominek - temperatura" },
+      "mode_override_temp": { "name": "Tryb nadrzędny - temperatura" },
+      "mode_vacation_temp": { "name": "Tryb urlop - temperatura" },
+      "mode_away_humidity": { "name": "Tryb nieobecność - wilgotność" },
+      "mode_normal_humidity": { "name": "Tryb normalny - wilgotność" },
+      "mode_intensive_humidity": { "name": "Tryb intensywny - wilgotność" },
+      "mode_boost_humidity": { "name": "Tryb turbo - wilgotność" },
+      "eco_min_supply_temp": { "name": "ECO min temperatura nawiewu" },
+      "eco_max_supply_temp": { "name": "ECO max temperatura nawiewu" },
+      "auto_air_quality": { "name": "AUTO jakość powietrza" },
+      "auto_humidity": { "name": "AUTO wilgotność" }
+    },
+    "switch": {
+      "mode_away_heater": { "name": "Tryb nieobecność - nagrzewnica" },
+      "mode_normal_heater": { "name": "Tryb normalny - nagrzewnica" },
+      "mode_intensive_heater": { "name": "Tryb intensywny - nagrzewnica" },
+      "mode_boost_heater": { "name": "Tryb turbo - nagrzewnica" },
+      "mode_hood_heater": { "name": "Tryb okap - nagrzewnica" },
+      "mode_fireplace_heater": { "name": "Tryb kominek - nagrzewnica" },
+      "mode_override_heater": { "name": "Tryb nadrzędny - nagrzewnica" },
+      "mode_vacation_heater": { "name": "Tryb urlop - nagrzewnica" },
+      "eco_free_cooling": { "name": "ECO free cooling" },
+      "eco_block_heater": { "name": "ECO blokada nagrzewnicy" },
+      "eco_block_cooler": { "name": "ECO blokada chłodnicy" },
+      "auto_heater": { "name": "AUTO nagrzewnica" }
+    }
+  },
+  "device_automation": {
+    "trigger_type": {
+      "filter_warning": "Filtr wymaga czyszczenia",
+      "mode_changed": "Zmiana trybu"
+    }
+  },
+  "services": {
+    "set_mode": {
+      "name": "Ustaw tryb",
+      "description": "Ustaw tryb wentylacji",
+      "fields": {
+        "mode": {
+          "name": "Tryb",
+          "description": "Tryb wentylacji"
+        }
+      }
+    },
+    "set_temperature": {
+      "name": "Ustaw temperaturę",
+      "description": "Ustaw temperaturę nawiewu",
+      "fields": {
+        "temperature": {
+          "name": "Temperatura",
+          "description": "Temperatura docelowa w Celsjuszach"
+        }
+      }
+    }
+  }
+}
